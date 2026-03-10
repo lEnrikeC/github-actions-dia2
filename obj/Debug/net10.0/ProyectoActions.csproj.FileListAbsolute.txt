@@ -1,0 +1,15 @@
+D:\cursogit\dia2\proyectoActions\bin\Debug\net10.0\ProyectoActions.exe
+D:\cursogit\dia2\proyectoActions\bin\Debug\net10.0\ProyectoActions.deps.json
+D:\cursogit\dia2\proyectoActions\bin\Debug\net10.0\ProyectoActions.runtimeconfig.json
+D:\cursogit\dia2\proyectoActions\bin\Debug\net10.0\ProyectoActions.dll
+D:\cursogit\dia2\proyectoActions\bin\Debug\net10.0\ProyectoActions.pdb
+D:\cursogit\dia2\proyectoActions\obj\Debug\net10.0\ProyectoActions.GeneratedMSBuildEditorConfig.editorconfig
+D:\cursogit\dia2\proyectoActions\obj\Debug\net10.0\ProyectoActions.AssemblyInfoInputs.cache
+D:\cursogit\dia2\proyectoActions\obj\Debug\net10.0\ProyectoActions.AssemblyInfo.cs
+D:\cursogit\dia2\proyectoActions\obj\Debug\net10.0\ProyectoActions.csproj.CoreCompileInputs.cache
+D:\cursogit\dia2\proyectoActions\obj\Debug\net10.0\ProyectoActions.sourcelink.json
+D:\cursogit\dia2\proyectoActions\obj\Debug\net10.0\ProyectoActions.dll
+D:\cursogit\dia2\proyectoActions\obj\Debug\net10.0\refint\ProyectoActions.dll
+D:\cursogit\dia2\proyectoActions\obj\Debug\net10.0\ProyectoActions.pdb
+D:\cursogit\dia2\proyectoActions\obj\Debug\net10.0\ProyectoActions.genruntimeconfig.cache
+D:\cursogit\dia2\proyectoActions\obj\Debug\net10.0\ref\ProyectoActions.dll

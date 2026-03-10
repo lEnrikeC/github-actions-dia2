@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\cursogit\\dia2\\ProyectoActions\\ProyectoActions.csproj": {}
+    "D:\\cursogit\\dia2\\proyectoActions\\ProyectoActions.csproj": {}
   },
   "projects": {
-    "D:\\cursogit\\dia2\\ProyectoActions\\ProyectoActions.csproj": {
+    "D:\\cursogit\\dia2\\proyectoActions\\ProyectoActions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cursogit\\dia2\\ProyectoActions\\ProyectoActions.csproj",
+        "projectUniqueName": "D:\\cursogit\\dia2\\proyectoActions\\ProyectoActions.csproj",
         "projectName": "ProyectoActions",
-        "projectPath": "D:\\cursogit\\dia2\\ProyectoActions\\ProyectoActions.csproj",
+        "projectPath": "D:\\cursogit\\dia2\\proyectoActions\\ProyectoActions.csproj",
         "packagesPath": "C:\\Users\\luiscortes02\\.nuget\\packages\\",
-        "outputPath": "D:\\cursogit\\dia2\\ProyectoActions\\obj\\",
+        "outputPath": "D:\\cursogit\\dia2\\proyectoActions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
