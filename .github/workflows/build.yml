@@ -1,4 +1,5 @@
 name: Build
+
 on:
   pull_request:
     branches:
@@ -32,6 +33,11 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    # 👇 secret disponible en todos los steps
+    env:
+      API_SECRET: ${{ secrets.API_SECRET }}
+
     steps:
 
       - name: Mensaje Inicial
@@ -45,17 +51,19 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      # 👇 AQUÍ agregamos el uso del secret
-      - name: Validar que el API_SECRET existe
-        env:
-          API_SECRET: ${{ secrets.API_SECRET }}
+      # 👇 Validar que el secret existe
+      - name: Verificar API_SECRET
         run: |
           if [ -z "$API_SECRET" ]; then
-            echo "Secret no encontrado"
+            echo "API_SECRET no encontrado"
             exit 1
           else
-            echo "Secret cargado correctamente"
+            echo "API_SECRET cargado correctamente"
           fi
+
+      # 👇 Intentar mostrarlo (GitHub lo ocultará)
+      - name: Mostrar API_SECRET
+        run: echo "API_SECRET = $API_SECRET"
 
       - name: Restore Dependencies
         run: dotnet restore src/ProyectoActions/ProyectoActions.csproj --verbosity ${{ inputs.log_level || 'normal' }}
