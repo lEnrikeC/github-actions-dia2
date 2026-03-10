@@ -3,8 +3,8 @@ on:
   pull_request:
     branches:
       - main
- 
-  workflow_dispatch:    # Permite ejecución manual
+
+  workflow_dispatch:
     inputs:
       build_configuration:
         description: 'Build Configuration (Debug or Release)'
@@ -24,27 +24,44 @@ on:
           - minimal
           - normal
           - detailed
-env: 
+
+env:
   DOTNET_VERSION: '10.0.103'
   BUILD_CONFIGURATION: 'Release'
+
 jobs:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Mensaje Inicial
-          run: echo "Iniciando workflow de CI"
-        - name: Checkout del código
-          uses: actions/checkout@v4
-        - name: Setup .NET
-          uses: actions/setup-dotnet@v4
-          with:
-            dotnet-version: ${{env.DOTNET_VERSION}}
-        
-        - name: Restore Dependencies
-          run: dotnet restore src/ProyectoActions/ProyectoActions.csproj --verbosity ${{inputs.log_level || 'normal'}} 
-          
-        - name: Build del proyecto          
-          run: |
-            CONFIG=${{inputs.build_configuration || 'Release' }}
-            echo "Build with configuration: $CONFIG"
-            dotnet build src/ProyectoActions/ProyectoActions.csproj --configuration $CONFIG --no-restore
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Mensaje Inicial
+        run: echo "Iniciando workflow de CI"
+
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      # 👇 AQUÍ agregamos el uso del secret
+      - name: Validar que el API_SECRET existe
+        env:
+          API_SECRET: ${{ secrets.API_SECRET }}
+        run: |
+          if [ -z "$API_SECRET" ]; then
+            echo "Secret no encontrado"
+            exit 1
+          else
+            echo "Secret cargado correctamente"
+          fi
+
+      - name: Restore Dependencies
+        run: dotnet restore src/ProyectoActions/ProyectoActions.csproj --verbosity ${{ inputs.log_level || 'normal' }}
+
+      - name: Build del proyecto
+        run: |
+          CONFIG=${{ inputs.build_configuration || 'Release' }}
+          echo "Build with configuration: $CONFIG"
+          dotnet build src/ProyectoActions/ProyectoActions.csproj --configuration $CONFIG --no-restore
